@@ -1,0 +1,10 @@
+D:\projetos\c#\Compilador\Compilador\Compilador\bin\Release\netcoreapp2.1\Compilador.deps.json
+D:\projetos\c#\Compilador\Compilador\Compilador\bin\Release\netcoreapp2.1\Compilador.runtimeconfig.json
+D:\projetos\c#\Compilador\Compilador\Compilador\bin\Release\netcoreapp2.1\Compilador.runtimeconfig.dev.json
+D:\projetos\c#\Compilador\Compilador\Compilador\bin\Release\netcoreapp2.1\Compilador.dll
+D:\projetos\c#\Compilador\Compilador\Compilador\bin\Release\netcoreapp2.1\Compilador.pdb
+D:\projetos\c#\Compilador\Compilador\Compilador\obj\Release\netcoreapp2.1\Compilador.csproj.CoreCompileInputs.cache
+D:\projetos\c#\Compilador\Compilador\Compilador\obj\Release\netcoreapp2.1\Compilador.AssemblyInfoInputs.cache
+D:\projetos\c#\Compilador\Compilador\Compilador\obj\Release\netcoreapp2.1\Compilador.AssemblyInfo.cs
+D:\projetos\c#\Compilador\Compilador\Compilador\obj\Release\netcoreapp2.1\Compilador.dll
+D:\projetos\c#\Compilador\Compilador\Compilador\obj\Release\netcoreapp2.1\Compilador.pdb
