@@ -6,10 +6,10 @@ namespace Compilador
 {
     class Token
     {
-        private string Chave { get; set; }
-        private string Valor { get; set; }
-        private int Linha { get; set; }
-        private int Coluna { get; set; }
+        public string Chave { get; set; }
+        public string Valor { get; set; }
+        public int Linha { get; set; }
+        public int Coluna { get; set; }
 
         public Token(string chave, string valor, int linha, int coluna)
         {

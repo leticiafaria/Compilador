@@ -7,7 +7,7 @@ namespace Compilador
 {
     class TabelaSimbolos
     {
-        private Dictionary<string, Token> TS { get; set; }
+        public Dictionary<string, Token> TS { get; set; }
         private Token PalavraReservada;
 
         public TabelaSimbolos()
@@ -28,7 +28,7 @@ namespace Compilador
             PalavraReservada = new Token(ChaveToken.Void, "void");
             TS.Add(ChaveDictionary.Void, PalavraReservada);
 
-            PalavraReservada = new Token(ChaveToken.Main, "main");
+            PalavraReservada = new Token(ChaveToken.Main, "Main");
             TS.Add(ChaveDictionary.Main, PalavraReservada);
 
             PalavraReservada = new Token(ChaveToken.Defstatic, "defstatic");
@@ -97,9 +97,6 @@ namespace Compilador
             PalavraReservada = new Token(ChaveToken.Soma, "+");
             TS.Add(ChaveDictionary.Soma, PalavraReservada);
 
-            PalavraReservada = new Token(ChaveToken.Subtracao, "-");
-            TS.Add(ChaveDictionary.Subtracao, PalavraReservada);
-
             PalavraReservada = new Token(ChaveToken.Divisao, "/");
             TS.Add(ChaveDictionary.Divisao, PalavraReservada);
 
@@ -121,20 +118,34 @@ namespace Compilador
             PalavraReservada = new Token(ChaveToken.PontoVirgula, ";");
             TS.Add(ChaveDictionary.PontoVirgula, PalavraReservada);
 
+            PalavraReservada = new Token(ChaveToken.Virgula, ",");
+            TS.Add(ChaveDictionary.Virgula, PalavraReservada);
+
             PalavraReservada = new Token(ChaveToken.DoisPontos, ":");
             TS.Add(ChaveDictionary.DoisPontos, PalavraReservada);
 
             PalavraReservada = new Token(ChaveToken.Hashtag, "#");
             TS.Add(ChaveDictionary.Hashtag, PalavraReservada);
 
+            PalavraReservada = new Token(ChaveToken.Print, "print");
+            TS.Add(ChaveDictionary.Print, PalavraReservada);
+
             PalavraReservada = new Token(ChaveToken.EndOfFile, "EOF");
             TS.Add(ChaveDictionary.EndOfFile, PalavraReservada);
 
+            PalavraReservada = new Token(ChaveToken.Ponto, ".");
+            TS.Add(ChaveDictionary.Ponto, PalavraReservada);
+
+            PalavraReservada = new Token(ChaveToken.AbreCochetes, "[");
+            TS.Add(ChaveDictionary.AbreCochetes, PalavraReservada);
+
+            PalavraReservada = new Token(ChaveToken.FechaCochetes, "]");
+            TS.Add(ChaveDictionary.FechaCochetes, PalavraReservada);
         }
 
         public void ImprimeTabelaSimbolos()
         {
-            Console.WriteLine("-------- Tabela de Símbolos --------\n");
+            Console.WriteLine("\n\n\n-------- Tabela de Símbolos --------\n");
             // Percorre toda a tabela de símbolos e printa o seu conteúdo
             foreach (string key in TS.Keys)
             {
@@ -142,16 +153,104 @@ namespace Compilador
             }
         }
 
+        public void ImprimeToken()
+        {
+            Console.WriteLine("\n\n\n-------- Tabela de Símbolos --------\n");
+            // Percorre toda a tabela de símbolos e printa o seu conteúdo
+            foreach (string key in TS.Keys)
+            {
+                Console.WriteLine(TS[key].ImprimeTokenComLinhaEColuna());
+            }
+        }
+
         public Token RetornaToken(string lexema)
         {
             // Como a chave é igual ao lexema, se a chave exsistir, irá retornar o valor
-            return TS[lexema];
+            try
+            {
+                return TS[lexema];
+            }
+            catch (KeyNotFoundException)
+            {
+                //CadastraNovoTokenTabelaSimbolos(lexema, linha, coluna);
+                return null;
+            }
         }
 
-        public void CadastraNovoTokenTabelaSimbolos(string lexema, int linha, int coluna)
+        public void RemoverTS(string lexema)
         {
-            Token Token = new Token(ChaveToken.Identificador, lexema, linha, coluna);
+            foreach (string key in TS.Keys)
+            {
+                if(key.Equals(lexema))
+                {
+                    TS.Remove(TS[key].Chave);
+                }
+            }   
+        }
+
+        public Token CadastraNegativo(string lexema, int linha, int coluna)
+        {
+            Token Token;
+            Token = new Token(ChaveToken.Negativo, lexema, linha, coluna);
+            
             this.TS.Add(lexema, Token);
+            return Token;
+        }
+
+        public Token CadastraSubtracao(string lexema, int linha, int coluna)
+        {
+            Token Token;
+            Token = new Token(ChaveToken.Subtracao, lexema, linha, coluna);
+            
+            this.TS.Add(lexema, Token);
+            return Token;
+        }
+
+        private bool IsInteger(string lexema)
+        {
+            int valor;
+            bool isNumber = int.TryParse(lexema, out valor);
+            return isNumber;
+        }
+
+        private bool IsDouble(string lexema)
+        {
+            double val;
+            bool isDouble = double.TryParse(lexema, out val);
+            return isDouble;
+        }
+
+        private bool IsString(string lexema)
+        {
+            return lexema.Contains('"');
+        }
+
+        public Token CadastraNovoTokenTabelaSimbolos(string lexema, int linha, int coluna)
+        {
+            Token Token;
+
+            if (this.IsInteger(lexema))
+            {
+                Token = new Token(ChaveToken.ValorInteiro, lexema, linha, coluna);
+            }
+
+            else if(this.IsDouble(lexema))
+            {
+                Token = new Token(ChaveToken.ValorReal, lexema, linha, coluna);
+            }
+            
+            else if(this.IsString(lexema))
+            {
+                Token = new Token(ChaveToken.ConstString, lexema, linha, coluna);
+            }
+
+            else
+            {
+                Token = new Token(ChaveToken.Identificador, lexema, linha, coluna);
+            }
+
+            this.TS.Add(lexema, Token);
+            return Token;
         }
     }
 }

@@ -34,7 +34,7 @@ namespace Compilador
         public static readonly string Igual = "==";
         public static readonly string Diferente = "!=";
         public static readonly string Soma = "+";
-        public static readonly string Subtracao = "-";
+
         public static readonly string Divisao = "/";
         public static readonly string Multiplicacao = "*";
         public static readonly string Negacao = "!";
@@ -43,9 +43,18 @@ namespace Compilador
         public static readonly string FechaParenteses = ")";
         public static readonly string Aspas = "\"";
         public static readonly string PontoVirgula = ";";
+
+        public static readonly string Virgula = ",";
         public static readonly string DoisPontos = ":";
         public static readonly string Hashtag = "#";
 
+        public static readonly string Print = "print";
         public static readonly string EndOfFile = "EOF";
+
+        public static readonly string Ponto = ".";
+
+        public static readonly string AbreCochetes = "[";
+        public static readonly string FechaCochetes = "]";
+
     }
 }

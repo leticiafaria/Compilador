@@ -39,15 +39,29 @@ namespace Compilador
         public static readonly string Multiplicacao = "OP_MULTI";
         public static readonly string Negacao = "OP_NEGACAO";
 
+        public static readonly string Negativo = "OP_NEGATIVO";
+
         public static readonly string AbreParenteses = "SMB_A_PARENTESES";
         public static readonly string FechaParenteses = "SMB_F_PARENTESES";
         public static readonly string Aspas = "SMB_ASPAS";
         public static readonly string PontoVirgula = "SMB_PONTO_VIRGULA";
+        public static readonly string Virgula = "SMB_VIRGULA";
         public static readonly string DoisPontos = "SMB_DOIS_PONTOS";
         public static readonly string Hashtag = "SMB_HASHTAG";
 
         public static readonly string EndOfFile = "EOF";
         public static readonly string Identificador = "ID";
 
+        public static readonly string ValorInteiro = "NUM_INT";
+
+        public static readonly string ValorReal = "NUM_DOUBLE";
+        public static readonly string Print = "KW_PRINT";
+
+        public static readonly string Ponto = "Ponto";
+
+        public static readonly string AbreCochetes = "SMB_A_COCHETES";
+        public static readonly string FechaCochetes = "SMB_F_COCHETES";
+
+        public static readonly string ConstString = "ConstString";
     }
 }

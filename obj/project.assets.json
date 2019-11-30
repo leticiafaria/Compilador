@@ -688,30 +688,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Leticia\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\JF\\.nuget\\packages\\": {},
+    "D:\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\projetos\\c#\\Compilador\\Compilador\\Compilador\\Compilador.csproj",
+      "projectUniqueName": "C:\\Users\\JF\\Compilador\\Compilador.csproj",
       "projectName": "Compilador",
-      "projectPath": "D:\\projetos\\c#\\Compilador\\Compilador\\Compilador\\Compilador.csproj",
-      "packagesPath": "C:\\Users\\Leticia\\.nuget\\packages\\",
-      "outputPath": "D:\\projetos\\c#\\Compilador\\Compilador\\Compilador\\obj\\",
+      "projectPath": "C:\\Users\\JF\\Compilador\\Compilador.csproj",
+      "packagesPath": "C:\\Users\\JF\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\JF\\Compilador\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "D:\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Leticia\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\JF\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
